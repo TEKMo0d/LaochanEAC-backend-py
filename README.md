@@ -1,9 +1,9 @@
 # LaochanEAC-backend-py
 
-[![License](https://img.shields.io/github/license/TEKMo0d/LaochanEAC-backend-py)](./LICENSE)
-[![Issues](https://img.shields.io/github/issues/TEKMo0d/LaochanEAC-backend-py)](https://github.com/TEKMo0d/LaochanEAC-backend-py/issues)
-[![Stars](https://img.shields.io/github/stars/TEKMo0d/LaochanEAC-backend-py)](https://github.com/TEKMo0d/LaochanEAC-backend-py/stargazers)
-[![Forks](https://img.shields.io/github/forks/TEKMo0d/LaochanEAC-backend-py)](https://github.com/TEKMo0d/LaochanEAC-backend-py/network)
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![GPLv3 license](https://img.shields.io/badge/License-AGPL3.0-blue.svg)](/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Awesome Badges](https://img.shields.io/badge/badges-awesome-green.svg)](https://github.com/Naereen/badges)
 
 写完比原先慢十倍
 
