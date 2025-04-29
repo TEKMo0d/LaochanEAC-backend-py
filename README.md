@@ -17,6 +17,8 @@
 
 使用python重构laochan-eac后端
 
+目前只打算做p2d的练练手
+
 要写的东西太多啦！写不出to-do-list
 
 # 他妈的为什么badges总炸
