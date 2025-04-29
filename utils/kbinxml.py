@@ -6,9 +6,36 @@ import binascii
 import xml.etree.ElementTree as ET
 from xml.sax.saxutils import escape, quoteattr
 import kbinxml
-import xmltodict
+
 
 from kxml_value import Serializable, KValueG, v
+
+class XMLParser:
+    def __init__(self, config=None):
+        self.config = {
+            "ignoreAttributes": False,
+            "parseAttributeValue": False,
+            "attributeNamePrefix": "$",
+            "removeNSPrefix": True,
+            "textNodeName": "__value",
+            "numberParseOptions": {
+                "hex": False,
+                "leadingZeros": False,
+                "eNotation": False,
+                "skipLike": r".*",
+            }
+        }
+    def parse(self, xml_string):
+        try:
+            root = ET.fromstring(xml_string)
+            clean_tag = self._clean_tag(root.tag)
+            result = {
+                clean_tag: self._process_element(root)
+            }
+            
+            return self._normalize_result(result)
+        except Exception as e:
+            raise Exception(f"XML解析错误: {str(e)}")
 
 def parseValue(node: Dict[str, Any]) -> Any:
     is_array = "__count" in node
@@ -43,6 +70,7 @@ def parseValue(node: Dict[str, Any]) -> Any:
     }
 
 def toObject(node: Union[Dict[str, Any], List[Any], str]) -> Any:
+    
     if isinstance(node, list):
         return [toObject(v) for v in node]
 
@@ -67,12 +95,26 @@ def toObject(node: Union[Dict[str, Any], List[Any], str]) -> Any:
     return obj
 
 def fromKBinXml(kbinxml_data: bytes, dump_xml: bool = False) -> Dict[str, Any]:
+    custom_parser = XMLParser({
+        "ignoreAttributes": False,
+        "parseAttributeValue": False,
+        "attributeNamePrefix": "$",
+        "removeNSPrefix": True,
+        "textNodeName": "__value",
+        "numberParseOptions": {
+            "hex": False,
+            "leadingZeros": False,
+            "eNotation": False,
+            "skipLike": r".*"
+        }
+    })
+    
     xml_string = kbinxml.decode(kbinxml_data)
     
     if dump_xml:
         print(xml_string)
         
-    return xmltodict.parse(xml_string, attr_prefix="$", cdata_key="__value")
+    return custom_parser.parse(xml_string)
 
 def serializeValue(value: Any, type_name: str) -> str:
     if type_name in ["s8", "u8", "s16", "u16", "s32", "u32", "s64", "u64", "float", "double"]:
