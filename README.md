@@ -18,3 +18,5 @@
 使用python重构laochan-eac后端
 
 要写的东西太多啦！写不出to-do-list
+
+# 他妈的为什么badges总炸
