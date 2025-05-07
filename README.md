@@ -1,24 +1,21 @@
 # LaochanEAC-backend-py
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 [![GPLv3 license](https://img.shields.io/badge/License-AGPL3.0-blue.svg)](/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Awesome Badges](https://img.shields.io/badge/badges-awesome-green.svg)](https://github.com/Naereen/badges)
 
-写完比原先慢十倍
-
-我跟你说typescript是对的
-
-他妈的都是谁在用python
-
-已老实
+一个基于python的游戏后端
 
 # to-do-list
 
-使用python重构laochan-eac后端
+现阶段只实现iidx部分，sdvx等部分work in progress
 
-目前只打算做p2d的练练手
+- [x] 辅助函数/工具类
+- [x] 通信中间件
+- [ ] 装饰器
+- [ ] API部分
+- [ ] 控制器配置相关函数
 
-要写的东西太多啦！写不出to-do-list
-
-# 他妈的为什么badges总炸
+~~# 他妈的为什么badges总炸~~
